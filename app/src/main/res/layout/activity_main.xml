@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_faq_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingBottom="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/activity_faq_back_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_faq_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:text="LOT CHECKER"
+            android:textColor="#001232"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/activity_faq_back_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_faq_top"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/registration_header"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Enter Registration Number"/>-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/registration_number"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:backgroundTint="@color/colorLightBlue"-->
+        <!--            android:hint="Enter Reg Number"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/registration_number_header"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:hint="Enter Registration Number"
+                android:textColorHint="@color/colorLightBlue"
+                app:boxStrokeColor="@color/colorLightBlue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/clearText"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/crossicon" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnFine"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rectangle3"
+            android:text="Show Fine"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="**Please enter comma(,) between two numbers without empty space**"
+            android:textColor="@color/colorBlack2" />
+
+        <TextView
+            android:id="@+id/fineAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorLightBlue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="0dp"
+            android:background="#FFEEEEEE"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_faq_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:nestedScrollingEnabled="true"
+            android:overScrollMode="always"
+            android:paddingBottom="30dp" />
+
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:padding="5dp"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/copyResult"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/rectangle3"
+        android:text="Copy Result"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/exportResult"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/rectangle3"
+        android:text="Export Result"
+        android:textSize="20sp"
+        />
+
+</LinearLayout>
+</RelativeLayout>
